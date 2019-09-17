@@ -86,11 +86,15 @@ function processStream(url) {
 	})
 }
 
+function clone(obj) {
+	return JSON.parse(JSON.stringify(obj))
+}
+
 function getM3U(url, idx) {
 	return new Promise((resolve, reject) => {
 
 		if (m3us[url]) {
-			resolve(m3us[url])
+			resolve(clone(m3us[url]))
 			return 
 		}
 
@@ -133,7 +137,7 @@ function getM3U(url, idx) {
 				})
 				if (items.length)
 					m3us[url] = items
-				resolve(items)
+				resolve(clone(items))
 			} else
 				resolve([])
 		})

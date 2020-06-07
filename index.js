@@ -18,7 +18,7 @@ const defaultTypes = []
 for (let key in map)
 	defaultTypes.push({
 		name: key,
-		m3u: 'https://raw.githubusercontent.com/freearhey/iptv/master/channels/' + map[key] + '.m3u'
+		m3u: 'https://raw.githubusercontent.com/iptv-org/iptv/master/channels/' + map[key] + '.m3u'
 	})
 
 const types = []
